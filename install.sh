@@ -13,6 +13,10 @@ if [ "$1" != "--exisiting" ] ; then
     sudo usermod -a -G staff monitor
 fi
 
+# copy existing sudoers file
+sudo cp -f ./etc/sudoers.d/monitor /etc/sudoers.d/monitor
+sudo chmod 440 /etc/sudoers.d/monitor
+
 # copy scripts and service files
 sudo cp -rf ./scripts /home/$uname
 sudo cp -rf ./systemd-units/* /etc/systemd/system
@@ -24,7 +28,6 @@ sudo chown monitor /var/cgi-bin/
 sudo cp -f ./etc/apache2/ports.conf /etc/apache2/ports.conf
 sudo cp -f ./etc/apache2/sites-avaliable/* /etc/apache2/sites-avaliable
 sudo cp -f ./etc/nginx/sites-avaliable/* /etc/nginx/sites-avaliable
-
 sudo ln -sf /etc/nginx/sites-avaliable/monitor /etc/nginx/sites-enabled/monitor
 
 # acrivating apache2 modules
