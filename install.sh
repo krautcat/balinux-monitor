@@ -8,7 +8,7 @@ if [ "$1" != "--update" ] ; then
     sudo apt install sysstat apache2 nginx nginx-core libcgi-pm-perl libjson-xs-perl libio-interface-perl
 
     # create monitor user adn add to staff group
-    adduser $uname
+    sudo adduser $uname
     echo $uname:$passwd | sudo chpasswd
     sudo usermod -a -G staff monitor
 
