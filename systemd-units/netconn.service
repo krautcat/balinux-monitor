@@ -11,4 +11,5 @@ Group=monitor
 ExecStart=/home/monitor/scripts/netconn.sh
 ExecReload=/home/monitor/scripts/netconn.sh --restart
 
+[Install]
 WantedBy=multi-user.target

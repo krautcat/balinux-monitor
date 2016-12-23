@@ -11,4 +11,5 @@ Group=monitor
 ExecStart=/home/monitor/scripts/iostat.sh
 ExecReload=/home/monitor/scripts/iostat.sh --restart
 
+[Install]
 WantedBy=multi-user.target

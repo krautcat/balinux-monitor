@@ -25,11 +25,11 @@ sudo cp -f ./etc/apache2/ports.conf /etc/apache2/ports.conf
 sudo cp -f ./etc/apache2/sites-avaliable/* /etc/apache2/sites-avaliable
 sudo cp -f ./etc/nginx/sites-avaliable/* /etc/nginx/sites-avaliable
 
-sudo ln -s /etc/nginx/sites-avaliable/monitor /etc/nginx/sites-enabled/monitor
+sudo ln -sf /etc/nginx/sites-avaliable/monitor /etc/nginx/sites-enabled/monitor
 
 # acrivating apache2 modules
-sudo ln -s /etc/apache2/mods-available/cgid.load /etc/apache2/mods-enabled/
-sudo ln -s /etc/apache2/mods-available/cgid.conf /etc/apache2/mods-enabled/
+sudo ln -sf /etc/apache2/mods-available/cgid.load /etc/apache2/mods-enabled/
+sudo ln -sf /etc/apache2/mods-available/cgid.conf /etc/apache2/mods-enabled/
 
 # enabling it
 for systemd_unit in ./systemd-units/*; do
