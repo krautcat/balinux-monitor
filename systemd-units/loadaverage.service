@@ -10,3 +10,5 @@ Group=monitor
 
 ExecStart=/home/monitor/scripts/loadaverage.sh
 ExecReload=/home/monitor/scripts/loadaverage.sh --restart
+
+WantedBy=multi-user.target

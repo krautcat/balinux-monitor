@@ -10,3 +10,5 @@ Group=monitor
 
 ExecStart=/home/monitor/scripts/top-talkers.sh
 ExecReload=/home/monitor/scripts/top-talkers.sh --restart
+
+WantedBy=multi-user.target

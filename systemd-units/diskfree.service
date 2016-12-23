@@ -10,3 +10,5 @@ Group=monitor
 
 ExecStart=/home/monitor/scripts/diskfree.sh
 ExecReload=/home/monitor/scripts/diskfree.sh --restart
+
+WantedBy=multi-user.target
