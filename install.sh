@@ -21,7 +21,7 @@ sudo chgrp staff /var/cgi-bin/
 sudo chown monitor /var/cgi-bin/
 
 # copy configuration
-sudo cp -f ./etc/apache2/pots.conf /etc/apache2/ports.conf
+sudo cp -f ./etc/apache2/ports.conf /etc/apache2/ports.conf
 for apache2_site in ./etc/apache2/sites-avaliable/*; do
     sudo cp -f ./etc/apache2/sites-avaliable/$apache2_site /etc/apache2/sites-avaliable/
 done
