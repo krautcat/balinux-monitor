@@ -21,9 +21,15 @@ sudo chgrp staff /var/cgi-bin/
 sudo chown monitor /var/cgi-bin/
 
 # copy configuration
-sudo cp -f ./etc/apache2/pots.conf /etc/apache2/pots.conf
-sudo cp -f ./etc/apache2/sites-avaliable/* /etc/apache2/sites-avaliable/
-sudo cp -f ./etc/nginx/sites-avaliable/* /etc/nginx/sites-avaliable/
+sudo cp -f ./etc/apache2/pots.conf /etc/apache2/ports.conf
+for apache2_site in ./etc/apache2/sites-avaliable/*; do
+    sudo cp -f ./etc/apache2/sites-avaliable/$apache2_site /etc/apache2/sites-avaliable/
+done
+
+for nginx_site in ./etc/nginx/sites-avaliable/*; do
+    sudo cp -f ./etc/apache2/sites-avaliable/$apache2_site /etc/nginx/sites-avaliable/
+done
+
 sudo ln -s /etc/nginx/sites-avaliable/monitor /etc/nginx/sites-enable/monitor
 
 # acrivating apache2 modules
