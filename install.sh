@@ -25,6 +25,10 @@ if [ "$1" != "--update" ] ; then
     # acrivating apache2 modules
     sudo ln -sf /etc/apache2/mods-available/cgid.load /etc/apache2/mods-enabled/
     sudo ln -sf /etc/apache2/mods-available/cgid.conf /etc/apache2/mods-enabled/
+
+    # reload apache and nginx configuration
+    sudo systemctl reload apache2.service
+    sudo systemctl reload nginx.service
 fi
 
 # copy scripts and service files
