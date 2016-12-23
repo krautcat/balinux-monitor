@@ -1,0 +1,12 @@
+[Unit]
+Description=NetconnDaemon
+
+[Service]
+Type=forking
+PIDFile=/tmp/monitor/netconn.pid
+
+User=monitor
+Group=monitor
+
+ExecStart=/home/monitor/scripts/netconn.sh
+ExecReload=/home/monitor/scripts/netconn.sh --restart
