@@ -22,12 +22,12 @@ sudo chown monitor /var/cgi-bin/
 
 # copy configuration
 sudo cp -f ./etc/apache2/ports.conf /etc/apache2/ports.conf
-for file in ./etc/apache2/sites-avaliable/*; do
-    sudo cp -f ./etc/apache2/sites-avaliable/$file /etc/apache2/sites-avaliable/
+for apache2_site in ./etc/apache2/sites-avaliable/*; do
+    sudo cp -f $apache2_site /etc/apache2/sites-avaliable/
 done
 
-for file in ./etc/nginx/sites-avaliable/*; do
-    sudo cp -f $./etc/nginx/sites-avaliable/$file /etc/nginx/sites-avaliable/
+for nginx_site in ./etc/nginx/sites-avaliable/*; do
+    sudo cp -f $nginx_site /etc/nginx/sites-avaliable/
 done
 
 sudo ln -s /etc/nginx/sites-avaliable/monitor /etc/nginx/sites-enable/monitor
@@ -37,6 +37,6 @@ sudo ln -s /etc/apache2/mods-available/cgid.load /etc/apache2/mods-enabled/
 sudo ln -s /etc/apache2/mods-available/cgid.conf /etc/apache2/mods-enabled/
 
 # enabling it
-for file in ./systemd-units/*; do
-    sudo systemctl enable $file
+for systemd_unit in ./systemd-units/*; do
+    sudo systemctl enable ${systemd_unit##*/}
 done
