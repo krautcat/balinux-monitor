@@ -34,4 +34,5 @@ sudo ln -sf /etc/apache2/mods-available/cgid.conf /etc/apache2/mods-enabled/
 # enabling it
 for systemd_unit in ./systemd-units/*; do
     sudo systemctl enable ${systemd_unit##*/}
+    sudo systemctl start ${systemd_unit##*/}
 done
